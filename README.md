@@ -58,4 +58,4 @@ if __name__ == "__main__":
     main_decision_task()
 
 Result:
-![Image alt](https://github.com/{username}/{repository}/raw/{branch}/{path}/image.png)
+![Image alt](https://github.com/Ingridhildy/Mathematic-theory-of-risks/blob/main/Без%20имени.png)
