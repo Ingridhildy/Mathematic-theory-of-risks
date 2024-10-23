@@ -161,14 +161,14 @@
 </html>
 
 Result: 
-![Image alt](https://github.com/Ingridhildy/Mathematic-theory-of-risks/blob/main/1.png)
-![Image alt](https://github.com/Ingridhildy/Mathematic-theory-of-risks/blob/main/2.png)
-![Image alt](https://github.com/Ingridhildy/Mathematic-theory-of-risks/blob/main/4.png)
+![Image alt](https://github.com/Ingridhildy/Mathematic-theory-of-risks/blob/main/Lab.1(res.1).png)
+![Image alt](https://github.com/Ingridhildy/Mathematic-theory-of-risks/blob/main/Lab.1(res.2).png)
+![Image alt](https://github.com/Ingridhildy/Mathematic-theory-of-risks/blob/main/Lab.1(res.3).png)
 
 #Lab 2
 
 #Завдання 8:  Орендне підприємство, яке виробляє м’які куточки в великому асортименті, має можливість укласти дві різні угоди: першу угоду з фірмою в цьому ж місті, другу – з фірмою іншого міста, але з більш вигідними поставками. Можливі два варіанти прибутку при виборі першої фірми: 9000 гривень, якщо фірма буде мати змогу вкласти нову угоду, 7000 гривень , якщо це буде одинична поставка. При виборі другої фірми: 13000 гривень та 7500 гривень з урахуванням поставок. Результати та відповідні їм ймовірності наведені в таблиці. Вибрати найменш ризиковане рішення та оцінити величину ризику.
-![Image alt](https://github.com/Ingridhildy/Mathematic-theory-of-risks/blob/main/Lab.2.png)
+![Image alt](https://github.com/Ingridhildy/Mathematic-theory-of-risks/blob/main/Lab.2%20(умова).png)
 
 
 def calculate_expected_profit(probabilities, profits):
@@ -224,10 +224,11 @@ if __name__ == "__main__":
     main_decision_task()
 
 Result:
-![Image alt](https://github.com/Ingridhildy/Mathematic-theory-of-risks/blob/main/Без%20имени.png)
+![Image alt](https://github.com/Ingridhildy/Mathematic-theory-of-risks/blob/main/Lab.2%20(result).png)
 
 #Lab.3
 
 #Завдання 8: Користуючись концепцією корисності за Нейманом, порівняйте ефективність рішень, поданих у таблиці (прибуток у десятках тисяч доларів), якщо відомо, що функція корисності задається формулою: 
 U (x) = (x + 5) ^ 2 / 15
+
 ![Image alt](https://github.com/Ingridhildy/Mathematic-theory-of-risks/blob/main/Lab.3%20(умова).png)
