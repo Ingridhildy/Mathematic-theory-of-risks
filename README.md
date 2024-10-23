@@ -163,7 +163,7 @@
 Result: 
 ![Image alt](https://github.com/Ingridhildy/Mathematic-theory-of-risks/blob/main/1.png)
 ![Image alt](https://github.com/Ingridhildy/Mathematic-theory-of-risks/blob/main/2.png)
-![Image alt](https://github.com/)
+![Image alt](https://github.com/Ingridhildy/Mathematic-theory-of-risks/blob/main/4.png)
 
 #Lab 2
 
