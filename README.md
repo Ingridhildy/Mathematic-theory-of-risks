@@ -233,14 +233,12 @@ U (x) = (x + 5) ^ 2 / 15
 
 ![Image alt](https://github.com/Ingridhildy/Mathematic-theory-of-risks/blob/main/Lab.3%20(умова).png)
 
-import numpy as np
-
 # Дано
-decisions = {
-    'I': [10, -5, -5],
-    'II': [-5, -5, 10],
-    'III': [1.5, 1.5, 0],
-    'IV': [0, 0, 0]
+profits = {
+    "I": [10, -5, -5],
+    "II": [-5, -5, 10],
+    "III": [1.5, 1.5, 0],
+    "IV": [0, 0, 0]
 }
 probabilities = [0.5, 0.1, 0.4]
 
@@ -250,12 +248,13 @@ def utility(x):
 
 # Обчислення очікуваної корисності для кожного рішення
 expected_utilities = {}
-for decision, outcomes in decisions.items():
-    utilities = [utility(outcome) for outcome in outcomes]
-    expected_utility = np.dot(utilities, probabilities)
+for decision, profits_list in profits.items():
+    expected_utility = sum(prob * utility(profit) for prob, profit in zip(probabilities, profits_list))
     expected_utilities[decision] = expected_utility
 
-expected_utilities
+# Виведення результатів
+for decision, expected_utility in expected_utilities.items():
+    print(f"Очікувана корисність для рішення {decision}: {expected_utility:.2f}")
 
 Result:
 
