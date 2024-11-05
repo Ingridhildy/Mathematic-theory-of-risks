@@ -332,13 +332,14 @@ optimal_risks = [
     portfolio_risk(optimal_weights_risk_target)
 ]
 
-print("Оптимальні ваги для мінімізації ризику:", optimal_weights_risk_min)
-print("Оптимальні ваги для приросту капіталу при m(c) = 30%:", optimal_weights_return_max)
-print("Оптимальні ваги для максимального приросту при σ(с) = 15%:", optimal_weights_risk_target)
-print("Сподівані норми прибутку:", optimal_returns)
-print("Ризики:", optimal_risks)
+print("Оптимальні ваги для мінімізації ризику:", optimal_weights_risk_min);
+print("Оптимальні ваги для приросту капіталу при m(c) = 30%:", optimal_weights_return_max);
+print("Оптимальні ваги для максимального приросту при σ(с) = 15%:", optimal_weights_risk_target);
+print("Сподівані норми прибутку:", optimal_returns);
+print("Ризики:", optimal_risks);
 
 Result:
+![image](https://github.com/user-attachments/assets/edd6f179-177a-406e-ac4d-734178bf4019)
 
 
 
