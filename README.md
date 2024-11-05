@@ -257,7 +257,9 @@ for decision, expected_utility in expected_utilities.items():
     print(f"Очікувана корисність для рішення {decision}: {expected_utility:.2f}")
 
 Result:
-![Image alt](https://github.com/Ingridhildy/Mathematic-theory-of-risks/blob/main/Lab.3(res).png)
+![image](https://github.com/user-attachments/assets/e479ec14-dcef-4eec-bd8a-7aa994715fec)
+
+
 
 # Lab 4
 
@@ -340,7 +342,6 @@ print("Ризики:", optimal_risks);
 
 Result:
 ![image](https://github.com/user-attachments/assets/edd6f179-177a-406e-ac4d-734178bf4019)
-
 
 
 # Lab 5
