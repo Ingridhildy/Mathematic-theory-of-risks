@@ -360,26 +360,80 @@ F = (  45    32    16
 
 import numpy as np
 
-#Матриця прибутків (тис. дол.)
-F = np.array([
-    [45, 32, 16],
-    [15, 8, 10],
-    [20, 18, 14],
-    [30, 23, 7]
-])
+# Вхідні дані
+F = np.array([[45, 32, 16],
+              [15, 8, 10],
+              [20, 18, 14],
+              [30, 23, 7]])
 
-#Сподівані прибутки і ризики для кожної фірми
-expected_profits = np.mean(F, axis=1)
-risks = np.std(F, axis=1)
+# Ймовірності попиту: великий, середній, низький
+p = np.array([0.5, 0.3, 0.2])
 
-#Функція критерію Ходжеса-Лемана
-def hodges_lehmann_criterion(lmbda):
-    return (1 - lmbda) * expected_profits - lmbda * risks
+# Розрахунок сподіваного прибутку для кожного варіанту
+expected_profit = np.dot(F, p)
 
-#Пошук найкращих рішень при різних λ
-lambda_values = np.linspace(0, 1, 11)
-best_firm_by_lambda = [np.argmax(hodges_lehmann_criterion(lmbda)) for lmbda in lambda_values]
+# Розрахунок ризику (за критерієм Вальда)
+wald_risk = np.min(F, axis=1)
 
-print("Найкращі фірми при різних λ:", best_firm_by_lambda)
+# Функція для розрахунку критерію Ходжеса-Лемана
+def hodges_lehmann_criterion(lambda_value):
+    return lambda_value * expected_profit + (1 - lambda_value) * wald_risk
+
+# Знаходимо компромісне рішення для різних значень λ
+lambda_values = np.linspace(0, 1, 11)  # λ від 0 до 1 з кроком 0.1
+results = [hodges_lehmann_criterion(l) for l in lambda_values]
+
+# Виведення результатів
+for l, res in zip(lambda_values, results):
+    print(f"λ = {l:.1f}: Компромісне рішення = {res}")
+
+# Вибір найкращого варіанту за критерієм Ходжеса-Лемана
+optimal_lambda_index = np.argmax([max(r) for r in results])
+optimal_lambda = lambda_values[optimal_lambda_index]
+optimal_solution = results[optimal_lambda_index]
+
+print(f"\nНайкраще значення λ: {optimal_lambda}")
+print(f"Оптимальне рішення: {optimal_solution}")
 
 Result:
+![image](https://github.com/user-attachments/assets/c53912d2-4dc8-4217-b8d4-87c804391282)
+
+
+# Lab.6
+
+![image](https://github.com/user-attachments/assets/48d8a789-2e1a-49cd-8da6-ea18d931e74a)
+
+
+import numpy as np
+
+# Вхідні дані
+F = np.array([[3, 8, 7, 9],
+              [5, 6, 3, 8],
+              [4, 9, 9, 4],
+              [6, 4, 5, 4]])
+
+# Ймовірності для критерія мінімального середньоквадратичного відхилення
+p = np.array([0.25, 0.15, 0.4, 0.2])
+
+# Розрахунок середнього значення для кожного варіанту
+mean_values = np.dot(F, p)
+
+# Розрахунок середньоквадратичного відхилення
+std_deviation = np.sqrt(np.dot((F - mean_values[:, None])**2, p))
+
+# Ризик за критерієм Вальда
+wald_risk = np.min(F, axis=1)
+
+# Компромісне рішення (враховуємо середньоквадратичне відхилення і ризик Вальда)
+compromise = mean_values - std_deviation + wald_risk
+
+# Вибір оптимального рішення
+optimal_index = np.argmax(compromise)
+optimal_solution = F[optimal_index]
+
+print(f"Оптимальне рішення: {optimal_solution}")
+print(f"Середньоквадратичне відхилення: {std_deviation[optimal_index]}")
+print(f"Ризик за критерієм Вальда: {wald_risk[optimal_index]}")
+
+Result:
+![image](https://github.com/user-attachments/assets/b9455e88-8e15-4e72-a3b5-b302a8cc73ee)
